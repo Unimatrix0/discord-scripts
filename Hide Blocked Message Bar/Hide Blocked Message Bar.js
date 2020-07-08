@@ -15,10 +15,10 @@
 
 // Recursive IIFE (Immediately-Invoked Function Expression)
 (function hideBlocked(){
-	// Find all elements with class .message-group-blocked
+	// Find all elements with class containing blockedSystemMessage
 	document.querySelectorAll('div[class*="blockedSystemMessage"]')
 	
-	// For each element found, apply an inline style that hides that element
+	// For each element found, apply an inline style that hides that element's 3rd level parent
 	.forEach(div => div.parentElement.parentElement.parentElement.setAttribute("style", "display: none;"));
 
 	// Run again every half-second 
