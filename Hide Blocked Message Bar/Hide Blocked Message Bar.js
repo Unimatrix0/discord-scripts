@@ -4,6 +4,9 @@
 // GitHub: http://github.com/dsasmblr
 // Blog: http://dsasmblr.com/blog
 //
+// Updated for 2020 by Unimatrix0
+// GitHub https://github.com/Unimatrix0
+//
 -------------------------------------*/
 
 // Description: This script hides the "blocked message" div.
@@ -13,10 +16,10 @@
 // Recursive IIFE (Immediately-Invoked Function Expression)
 (function hideBlocked(){
 	// Find all elements with class .message-group-blocked
-	document.querySelectorAll('.message-group-blocked')
+	document.querySelectorAll('div[class*="blockedSystemMessage"]')
 	
 	// For each element found, apply an inline style that hides that element
-	.forEach(div => div.setAttribute("style", "display: none;"));
+	.forEach(div => div.parentElement.parentElement.parentElement.setAttribute("style", "display: none;"));
 
 	// Run again every half-second 
 	setTimeout(hideBlocked,500);
